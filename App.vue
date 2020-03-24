@@ -1,17 +1,20 @@
 <template>
-  <view class="container">
-    <text class="text-color-primary">My Vue Native App</text>
-  </view>
+  <app-navigator></app-navigator>
 </template>
 
-<style>
-.container {
-  background-color: white;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-}
-.text-color-primary {
-  color: blue;
-}
-</style>
+<script>
+	import Vue from 'vue-native-core';
+	import AsyncStorage from 'react-native';
+	import axios from 'axios';
+
+	import AppNavigator from './router';
+	import Store from './store';
+
+	Vue.prototype.$axios = axios;
+	Vue.prototype.$store = Store;
+	Vue.prototype.$storage = AsyncStorage;
+
+	export default {
+		components: {AppNavigator}
+	}
+</script>
