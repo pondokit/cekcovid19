@@ -1,50 +1,45 @@
 <template>
 	<view class="container" :style="{paddingTop: status_bar_height}">
-		<view class="wrapHeader">
-			<image
-				:source="require('../assets/wave.png')"
-				:style="{position: 'absolute', zIndex: -10, top: 0, width: '100%', height: 520}"
-			/>
-			<view class="header">
-				<view>
-					<text class="title">lawan</text>
-					<text class="title">covid 19</text>
-				</view>
-				<image
-					:source="require('../assets/home.png')"
-					class="img"
-				/>
-			</view>
+		<view class="c-head">
+			<text>header</text>
 		</view>
 		<view class="menu">
-			<view class="status">
-				<text class="menuTitle">status terkini</text>
+			<text>Menu</text>
+		</view>
+		<view class="status">
+			<text class="t-menu">Status Terkini</text>
+			<view class="c-data">
 				<view class="data">
-					<text>Data</text>
+					<text class="i-kon" :style="{color: '#FC950D', backgroundColor: 'rgba(239, 108, 0, 0.1)'}">o</text>
+					<text class="amount" :style="{color:'#FC950D'}">1.099</text>
+					<text class="notice">Dalam Perawatan</text>
+				</view>
+				<view class="data">
+					<text class="i-kon" :style="{color: '#FC2D2D', backgroundColor: 'rgba(252, 45, 45, 0.1)'}">x</text>
+					<text class="amount" :style="{color:'#FC2D2D'}">69</text>
+					<text class="notice">Meninggal</text>
+				</view>
+				<view class="data">
+					<text class="i-kon" :style="{color: '#04A287', backgroundColor: 'rgba(4, 162, 135, 0.1)'}">+</text>
+					<text class="amount" :style="{color:'#04A287'}">1.000</text>
+					<text class="notice">Sembuh</text>
 				</view>
 			</view>
-			<view class="rujukan">
-				<view class="rowMenu">
-					<text class="menuTitle">daftar rumah sakit rujukan</text>
-					<text class="handle">lihat lengkap</text>
-					</view>
-				<touchable-opacity class="listRujuk">
-					<text class="rs">RS. PKU Muhammadiyah</text>
-					<text class="alamat"> <ionicons name="md-locate" color="#4E4E4E" /> Alamat lokasinya rumahsakit</text>
-				</touchable-opacity>
-				<touchable-opacity class="listRujuk">
-					<text class="rs">RS. PKU Muhammadiyah</text>
-					<text class="alamat"> <ionicons name="md-locate" color="#4E4E4E" /> Alamat lokasinya rumahsakit</text>
-				</touchable-opacity>
-			</view>
-			<view class="cek">
-				<text class="cekTitle">mulai cek mandiri</text>
-				<touchable-opacity class="handleCek">
-		    	<text class="cekTitle">Cek</text>
-		    </touchable-opacity>
-			</view>
 		</view>
-
+		<view class="rujukan">
+			<view class="h-rujukan">
+				<text class="t-menu">Daftar RS Rujukan</text>
+				<text class="lengkap">lihat lengkap</text>
+			</view>
+			<touchable-opacity class="listRujuk">
+				<text class="rs">RS. PKU Muhammadiyah</text>
+				<text class="alamat"> <ionicons name="md-locate" color="#4E4E4E" /> Alamat lokasinya rumahsakit jalab dan provinsi rumah sakitnya</text>
+			</touchable-opacity>
+			<touchable-opacity class="listRujuk">
+				<text class="rs">RS. PKU Muhammadiyah</text>
+				<text class="alamat"> <ionicons name="md-locate" color="#4E4E4E" /> Alamat lokasinya rumahsakit jalab dan provinsi rumah sakitnya</text>
+			</touchable-opacity>
+		</view>
 	</view>
 </template>
 
@@ -67,71 +62,99 @@ export default {
 <style>
 	.container {
 		flex: 1;
-		justify-content: center;
 		align-items: center;
-		background-color: #009C9F;
+		background-color: #E5E5E5;
 	},
-	.wrapHeader{
+	.c-head {
+		height: 80;
 		width: 100%;
-		height: 255;
-	},
-	.header {
-		height: 250;
-		width: 100%;
-		padding-right: 30;
+		background-color: red;
+		margin-bottom: 10;
 		padding-left: 30;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-	},
-	.title {
-		font-size: 24;
-		font-weight: bold;
-		text-transform: uppercase;
-		color: #fff;
-	},
-	.img {
-		width: 91;
-		height: 95;
+		padding-right: 30;
 	},
 	.menu {
-		flex: 1;
+		height: 150;
 		width: 100%;
-		padding: 30;
-		background-color: #fff;
-		border-top-left-radius: 30;
-		border-top-right-radius: 30;
+		background-color: yellow;
+		padding-left: 30;
+		margin-bottom: 45;
+	}
+	.status {
+		min-height: 160;
+		width: 100%;
+		padding-left: 30;
+		padding-right: 30;
+		margin-bottom: 30;
 	},
-	.menuTitle {
+	.t-menu {
 		font-size: 18;
-		text-transform: capitalize;
 		font-weight: bold;
 		line-height: 22;
-	},
-	.status {
-		margin-bottom: 25;
+		margin-bottom: 10;
 	},
 	.data {
+		align-items: center;
+	},
+	.c-data {
 		width: 100%;
-		height: 135;
+		height: 150;
 		background-color: #fff;
 		border-radius: 10;
-		margin-top: 17;
-		elevation: 6;
-	},
-	.rowMenu {
 		flex-direction: row;
 		justify-content: space-between;
-		margin-bottom: 19;
+		align-items: center;
+		padding-left: 20 ;
+		padding-right: 20 ;
+		elevation: 6;
+	},
+	.i-kon {
+		color: orange;
+		border-radius: 15;
+		width: 25;
+		height: 25;
+		font-size: 20;
+		padding-left: 6;
+		/* background-color: rgba(239, 108, 0, 0.1); */
+	},
+	.amount {
+		font-size: 28;
+		font-weight: bold;
+		line-height: 34;
+		color: #EF6C00;
+		margin-top: 10;
+		margin-bottom: 10;
+	},
+	.notice {
+		font-size: 11;
+		line-height: 13;
+		color: #979797;
+	},
+	.rujukan {
+		min-height: 160;
+		width: 100%;
+		padding-left: 30;
+		padding-right: 30;
+		margin-bottom: 30;
+	},
+	.h-rujukan {
+		flex-direction: row;
+		justify-content: space-between;
+	},
+	.lengkap {
+		font-size: 11;
+		line-height: 13;
+		color: #009C9F;
+		font-weight: normal;
 	},
 	.listRujuk {
 		width: 100%;
-		height: 80;
+		min-height: 100;
 		background-color: #fff;
 		border-radius: 10;
-		padding-left: 30;
+		padding-left: 20;
 		padding-top: 15;
-		padding-bottom: 20;
+		padding-bottom: 15;
 		margin-bottom: 14;
 		elevation: 6;
 	},
@@ -143,40 +166,9 @@ export default {
 		margin-bottom: 11;
 	},
 	.alamat {
+		width: 90%;
 		font-weight: normal;
 		font-size: 13px;
-		line-height: 16px;
-	},
-	.handle {
-		font-size: 11;
-		line-height: 13;
-		color: #009C9F;
-		font-weight: normal;
-	},
-	.cek {
-		width: 100%;
-		height: 90;
-		padding-left: 15;
-		padding-right: 15;
-		margin-top: 26;
-		border-radius: 10;
-		flex-direction: row;
-		justify-content: space-between;
-		background-color: rgb(34, 167, 232);
-		align-items: center;
-		elevation: 6;
-	},
-	.cekTitle {
-		font-size: 18;
-		font-weight: bold;
-		color: #fff;
-	},
-	.handleCek {
-		width: 98;
-		background-color: #17C6CA;
-		height: 33;
-		align-items: center;
-		justify-content: center;
-		border-radius: 5;
+		line-height: 20px;
 	}
 </style>
