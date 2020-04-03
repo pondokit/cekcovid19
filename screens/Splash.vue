@@ -1,8 +1,8 @@
 <template>
 	<view class="container" >
-			<view class="viewImg" :style="{'background-image': 'url(' + require('../assets/bg.png') + ');'}">
+			<view class="viewImg" :style="{'background-image': 'url(' + require('../assets/images/wave.png') + ');'}">
 				<image
-					:source="require('../assets/covidlo.png')"
+					:source="require('../assets/images/logo.png')"
 					class="img"
 				/>
 			</view>

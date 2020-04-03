@@ -7,16 +7,19 @@ import Splash from './screens/Splash';
 import Login from './screens/Login';
 import Home from './screens/Home';
 import History from './screens/History';
+import CheckMandiri from './screens/CheckMandiri';
+import ResultMandiri from './screens/ResultMandiri';
 
 const StackNavigator = createStackNavigator(
 	{
-    Splash: Splash,
+    	Splash: Splash,
 		Login: Login,
 		Home: Home,
-		History: History
+		CheckMandiri: CheckMandiri,
+		ResultMandiri: ResultMandiri,
 	},
 	{
-		initialRouteName: 'Home',
+		initialRouteName: 'CheckMandiri',
 		headerMode: 'none',
 	}
 );
