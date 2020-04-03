@@ -1,0 +1,32 @@
+[
+	{
+		"id" : "1a",
+		"question" : "Pernah kontak dengan pasien positif COVID-19 (berada dalam satu ruangan yang sama / kontak dalam jarak 1 meter) ATAU pernah berkunjung ke negara/daerah endemis COVID-19 dalam 14 hari terakhir?",
+		"true" : "2a",
+		"false" : "2b",
+	},
+	{
+		"id" : "2a",
+		"question" : "Sedang atau pernah mengalami \n\n - demam (>38 C) \n - pilek \n - batuk \n -sesak nafas",
+		"true" : "res_red",
+		"false" : "res_yellow",
+	},
+	{
+		"id" : "2b",
+		"question" : "Sedang atau pernah mengalami \n\n - demam (>38 C) \n - pilek \n - batuk \n -sesak nafas",
+		"true" : "res_green",
+		"false" : "res_blue",
+	},
+	{
+		"id" : "3a",
+		"question" : "Apakah anda sudah melakukan karantina 14 hari terhitung setelah kontak dengan pasien positif COVID-19?",
+		"true" : "4a",
+		"false" : "res_yellow",
+	},
+	{
+		"id" : "4a",
+		"question" : "Selama 14 hari karantina diri, Anda mengalami: \n\n - demam \n - pilek \n - batuk \n - sesak nafas",
+		"true" : "res_red",
+		"false" : "res_blue",
+	},
+]

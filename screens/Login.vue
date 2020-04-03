@@ -2,7 +2,7 @@
 	<view class="container" :style="{paddingTop: status_bar_height}">
 		<view class="form">
 			<image
-				:source="require('../assets/SCU.png')"
+				:source="require('../assets/images/img-title.png')"
 				class="img"
 			/>
 			<view class="input">
