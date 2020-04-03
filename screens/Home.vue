@@ -3,7 +3,7 @@
 		<view class="c-head">
 			<view class="user">
 				<image
-  				:source="require('../assets/user.png')"
+  				:source="require('../assets/images/user.png')"
   				class="img"
   			/>
 				<text class="name"> hai, pias!	</text>

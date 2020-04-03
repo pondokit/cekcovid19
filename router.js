@@ -19,7 +19,7 @@ const StackNavigator = createStackNavigator(
 		ResultMandiri: ResultMandiri,
 	},
 	{
-		initialRouteName: 'CheckMandiri',
+		initialRouteName: 'Splash',
 		headerMode: 'none',
 	}
 );

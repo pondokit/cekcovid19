@@ -8,7 +8,7 @@
 		<view class="c-header">
       <view class="header">
         <image
-  				:source="require('../assets/user.png')"
+  				:source="require('../assets/images/user.png')"
   				class="img"
   			/>
         <text class="u-name">Hai, Pias !</text>
