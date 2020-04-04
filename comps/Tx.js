@@ -4,12 +4,12 @@ import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
 
 let customFonts = {
-  'Exo-Regular': require('../assets/fonts/Exo-Regular.ttf'),
-  'Exo-Italic': require('../assets/fonts/Exo-Italic.ttf'),
-  'Exo-Bold': require('../assets/fonts/Exo-Bold.ttf'),
+  'InriaSans-Regular': require('../assets/fonts/InriaSans-Regular.ttf'),
+  'InriaSans-Italic': require('../assets/fonts/InriaSans-Italic.ttf'),
+  'InriaSans-Bold': require('../assets/fonts/InriaSans-Bold.ttf'),
 };
 
-export default class Tx extends React.Component {
+export default class Tx extends React.PureComponent {
   state = {
     fontsLoaded: false,
   };
@@ -46,9 +46,9 @@ export default class Tx extends React.Component {
   weight() {
     const {fn, fi, fb} = this.props;
 
-    if (fn) return 'Exo-Regular'
-    else if (fi) return 'Exo-Italic'
-    else if (fb) return 'Exo-Bold';
+    if (fn) return 'InriaSans-Regular'
+    else if (fi) return 'InriaSans-Italic'
+    else if (fb) return 'InriaSans-Bold';
   }
 
   /**
@@ -59,10 +59,12 @@ export default class Tx extends React.Component {
    * cp   color: primary
    */
   color() {
-    const {cb, cw, cp} = this.props;
+    const {c, cb, cw, cp, cm} = this.props;
 
-    if (cb) return '#333333'
+    if (c) return c
+    else if (cb) return '#333333'
     else if (cw) return '#FFFFFF'
+    else if (cm) return '#888888'
     else if (cp) return '#07BFC2';
   }
 
@@ -78,7 +80,7 @@ export default class Tx extends React.Component {
               fontFamily: this.weight(), 
               textAlign: this.align(),
               color: this.color(),
-              lineHeight: 23,
+              // lineHeight: 23,
               ...this.props.style[0] 
             }}
           >

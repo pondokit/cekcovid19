@@ -1,111 +1,115 @@
 <template>
 	<view class="container" :style="{paddingTop: status_bar_height}">
-		<view class="form">
-			<image
-				:source="require('../assets/images/img-title.png')"
-				class="img"
+		<bg-common />
+
+		<view class="card" :style="{height: screen.height - 150}">
+			<image 
+				class="title-img" 
+				resize-mode="contain" 
+				:source="require('../assets/images/img-title.png')" 
+				:style="{height: screen.width - 300}"
 			/>
-			<view class="input">
-				<text class="require">Username/Email</text>
+
+			<view>
+				<tx fn al cb class="require">Username/Email</tx>
 				<text-input
-					 class="text-input"
-					 v-model="text"
-					 placeholder="Masukkan username atau Email"
+					class="text-input"
+					placeholder="Masukkan username atau Email"
 				 />
 			</view>
-			<view class="input">
-				<text class="require">Provinsi</text>
+			<view>
+				<tx fn al cb class="require">Provinsi</tx>
 				<text-input
-					 class="text-input"
-					 v-model="text"
-					 placeholder="Masukkan Provinsi"
+					class="text-input"
+					placeholder="Masukkan Provinsi"
 				 />
 			</view>
-			<view class="input">
-				<text class="require">No Telepon</text>
+			<view>
+				<tx fn al cb class="require">No Telepon</tx>
 				<text-input
-					 class="text-input"
-					 v-model="text"
-					 placeholder="Masukkan No Telepon"
+					class="text-input"
+					placeholder="Masukkan No Telepon"
 				 />
-			</styleview>
-			<view class="notice">
-				<text>Kenapa harus mengisi data ?</text>
+			</view>
+			<view>
+				<tx fn al cb>Kenapa harus mengisi data ?</tx>
 				<view class="confirm">
 					<view class="checkbox"></view>
-					<text>anda setuju</text>
+					<tx fn al cb>anda setuju</tx>
 				</view>
 			</view>
-			<touchable-opacity class="submit">
-	    	<text class="login">Login</text>
-	    </touchable-opacity>
+			
+			<touchable-native-feedback>
+				<view class="button-view">
+					<tx fn ac cw>Submit</tx>
+				</view>
+			</touchable-native-feedback>
 		</view>
-	</view>
+
 </template>
 
 <script>
-	import { StatusBar } from 'react-native';
+	import { StatusBar, Dimensions } from 'react-native';
 
 	export default {
-		data: function() {
-			 return {
-					 text: ''
-			 };
-		},
+		data: () => ({
+			text: ''
+		}),
 		computed: {
 			status_bar_height() {
 				return  StatusBar.currentHeight || 0 ;
+			},
+			screen() {
+				return Dimensions.get('window');
 			},
 		},
 	}
 </script>
 
 <style>
+	
 	.container {
 		flex: 1;
 		justify-content: center;
 		align-items: center;
-	},
-	.form {
-		position: absolute;
-		width: 300;
-		height: 510;
-		padding-top: 43;
-		padding-bottom: 43;
-		padding-left: 28;
-		padding-right: 26;
-		elevation:1;
-		shadowColor: red;
-		shadowOpacity: 0.01;
-		shadowRadius: 1;
-		border-radius: 16;
-		align-items: center;
-	},
-	.img {
-		margin-bottom: 40;
-	},
-	.input {
-		align-self: flex-start;
-		margin-bottom: 20;
-	},
+		padding-horizontal: 30;
+	}
+	.card {
+		width: 100%;
+		background-color: #FFF;
+		elevation: 5;
+		padding: 30;
+		border-radius: 20;
+		position: relative;
+		top: -15;
+		justify-content: space-between;
+	}
+	.title-img {
+		width: 100%;
+	}
+	.button-view {
+		width: 100%;
+		background-color: #07BFC2;
+		padding: 10;
+		margin-top: 15;
+		border-radius: 5;
+	}
+
 	.text-input {
 		height: 35;
-		width: 245;
+		width: 100%;
 		background-color: #F7F7F7;
 		border-radius: 6;
 		padding-left: 10;
-	},
+	}
 	.require {
 		margin-bottom: 7;
-	},
-	.notice {
-		margin-top: 15;
-	},
+	}
 	.confirm {
 		margin-top: 10;
 		flex-direction: row;
 		align-items: center;
-	},
+	}
 	.checkbox {
 		width: 18;
 		height: 18;
@@ -113,18 +117,5 @@
 		border-color: #484a48;
 		margin-right: 10;
 		border-radius: 3;
-	},
-	.submit {
-		width: 247;
-		height: 40;
-		margin-top: 20;
-		border-radius: 9;
-		align-items: center;
-		justify-content: center;
-		background-color: #009C9F;
-	},
-	.login {
-		color: #fff;
-		font-size: 16;
 	}
 </style>

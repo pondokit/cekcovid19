@@ -15,8 +15,8 @@
 		align-items: center;
 	}
 	.wave {
-		width: 200%;
-		height: 400;
+		width: 100%;
+		height: 300;
 		position: absolute;
 		top: 0;
 	}

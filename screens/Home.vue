@@ -1,89 +1,116 @@
 <template>
-	<view class="container" :style="{paddingTop: status_bar_height}">
-		<view class="c-head">
-			<view class="user">
-				<image
-  				:source="require('../assets/images/user.png')"
-  				class="img"
-  			/>
-				<text class="name"> hai, pias!	</text>
+	<scroll-view>
+		<view class="container" :style="{paddingTop: status_bar_height}">
+			<!-- <bg-common /> -->
+			<view class="c-head">
+				<view class="user">
+					<image
+						:source="require('../assets/images/user.png')"
+						class="img"
+					/>
+					<tx fn al cb class="name">hai, pias!</tx>
+				</view>
+				<ionicons name="ios-timer" class="h-icon" color="#4E4E4E" />
 			</view>
-			 <ionicons name="ios-timer" class="h-icon" color="#4E4E4E" />
-			</view>
-		<view class="menu" :style="stylesDimen.scrollMenu">
-			<ScrollView :horizontal="true" >
-				<view class="s-menu">
-					<view>
-						<text class="s-title">bersama lawan</text>
-						<text class="s-title uppercase">covid 19</text>
+			<view class="menu" :style="{width: screen.width}">
+				<ScrollView :horizontal="true" :showsHorizontalScrollIndicator="false">
+					<view 
+						class="s-menu" 
+						:style="{width: screen.width - 60, marginLeft: 30, backgroundColor: '#009C9F'}"
+					>
+						<image 
+							:source="require('../assets/images/box-wave-aqua.png')" 
+							class="box-wave"
+							:style="{width: screen.width - 60}"
+						/>
+						<view>
+							<tx fb al cw class="s-title">bersama lawan</tx>
+							<tx fb al cw class="s-title uppercase">covid 19</tx>
+						</view>
+						<touchable-opacity class="s-handle" :style="{backgroundColor: '#17C6CA'}">
+							<tx fb ac cw class="s-handleTitle">kenali</tx>
+						</touchable-opacity>
 					</view>
-					<touchable-opacity class="s-handle">
-						<text class="s-handleTitle">kenali</text>
+					<view 
+						class="s-menu" 
+						:style="{width: screen.width - 60, backgroundColor: '#691BC7'}"
+					>
+						<image 
+							:source="require('../assets/images/box-wave-violet.png')" 
+							class="box-wave"
+							:style="{width: screen.width - 60}"
+						/>
+						<view>
+							<tx fb al cw class="s-title">bersama lawan</tx>
+							<tx fb al cw class="s-title uppercase">covid 19</tx>
+						</view>
+						<touchable-opacity class="s-handle" :style="{backgroundColor: '#B621EA'}">
+							<tx fb ac cw class="s-handleTitle">kenali</tx>
+						</touchable-opacity>
+					</view>
+					<view 
+						class="s-menu" 
+						:style="{width: screen.width - 60, marginRight: 30, backgroundColor: '#3D3AF7'}"
+					>
+						<image 
+							:source="require('../assets/images/box-wave-blue.png')" 
+							class="box-wave"
+							:style="{width: screen.width - 60}"
+						/>
+						<view>
+							<tx fb al cw class="s-title">bersama lawan</tx>
+							<tx fb al cw class="s-title uppercase">covid 19</tx>
+						</view>
+						<touchable-opacity class="s-handle" :style="{backgroundColor: '#003FBA'}">
+							<tx fb ac cw class="s-handleTitle">kenali</tx>
+						</touchable-opacity>
+					</view>
+				</ScrollView>
+			</view>
+			<view class="status">
+				<tx fb al cb class="t-menu">Status Terkini</tx>
+				<view class="c-data">
+					<view class="data">
+						<view class="c-icon">
+							<ionicons name="md-search" class="d-icon" color="#FC950D" />
+						</view>
+						<tx fb ac c="#FC950D" class="amount">1.099</tx>
+						<tx fn al cm class="notice">Dalam Perawatan</tx>
+					</view>
+					<view class="data">
+						<view class="c-icon">
+							<ionicons name="md-close" class="d-icon" color="#FC2D2D" />
+						</view>
+						<tx fb ac c="#FC2D2D" class="amount">69</tx>
+						<tx fn al cm class="notice">Meninggal</tx>
+					</view>
+					<view class="data">
+						<view class="c-icon">
+							<ionicons name="md-add" class="d-icon" color="#04A287" />
+						</view>
+						<tx fb ac c="#04A287" class="amount">1.000</tx>
+						<tx fn al cm class="notice">Sembuh</tx>
+					</view>
+				</view>
+			</view>
+			<view class="rujukan">
+				<view class="h-rujukan">
+					<tx fb al cb class="t-menu">Daftar RS Rujukan</tx>
+					<touchable-opacity>
+						<tx fn al cp class="lengkap">lihat lengkap</tx>
 					</touchable-opacity>
 				</view>
-				<view class="s-menu">
-					<view>
-						<text class="s-title">mulai cek mandiri</text>
-						<text class="s-title uppercase">covid 19</text>
-					</view>
-					<touchable-opacity class="s-handle">
-						<text class="s-handleTitle">mulai</text>
-					</touchable-opacity>
-				</view>
-				<view class="s-menu">
-					<view>
-						<text class="s-title">mulai cek harian</text>
-						<text class="s-title uppercase">covid 19</text>
-					</view>
-					<touchable-opacity class="s-handle">
-						<text class="s-handleTitle">mulai</text>
-					</touchable-opacity>
-				</view>
-			</ScrollView>
-			</view>
-		<view class="status">
-			<text class="t-menu">Status Terkini</text>
-			<view class="c-data">
-				<view class="data">
-					<view class="c-icon">
-						<ionicons name="md-search" class="d-icon" color="#FC950D" />
-					</view>
-					<text class="amount" :style="{color:'#FC950D'}">1.099</text>
-					<text class="notice">Dalam Perawatan</text>
-				</view>
-				<view class="data">
-					<view class="c-icon">
-						<ionicons name="md-close" class="d-icon" color="#FC2D2D" />
-					</view>
-					<text class="amount" :style="{color:'#FC2D2D'}">69</text>
-					<text class="notice">Meninggal</text>
-				</view>
-				<view class="data">
-					<view class="c-icon">
-						<ionicons name="md-add" class="d-icon" color="#04A287" />
-					</view>
-					<text class="amount" :style="{color:'#04A287'}">1.000</text>
-					<text class="notice">Sembuh</texttouchable-opacity>
-				</view>
-			</view>
-			</view>
-		<view class="rujukan">
-			<view class="h-rujukan">
-				<text class="t-menu">Daftar RS Rujukan</text>
-				<touchable-opacity>
-					<text class="lengkap">lihat lengkap</text>
+				<touchable-opacity class="listRujuk">
+					<tx fb al cb class="rs">RS. PKU Muhammadiyah</tx>
+					<tx fn al cb class="alamat"> <ionicons name="md-locate" color="#4E4E4E" /> Alamat lokasinya rumahsakit jalab dan provinsi rumah sakitnya</tx>
+				</touchable-opacity>
+				<touchable-opacity class="listRujuk">
+					<tx fb al cb class="rs">RS. PKU Muhammadiyah</tx>
+					<tx fn al cb class="alamat"> <ionicons name="md-locate" color="#4E4E4E" /> Alamat lokasinya rumahsakit jalab dan provinsi rumah sakitnya</tx>
 				</touchable-opacity>
 			</view>
-			<touchable-opacity class="listRujuk">
-				<text class="rs">RS. PKU Muhammadiyah</text>
-				<text class="alamat"> <ionicons name="md-locate" color="#4E4E4E" /> Alamat lokasinya rumahsakit jalab dan provinsi rumah sakitnya</text>
-			</touchable-opacity>
-			<touchable-opacity class="listRujuk">
-				<text class="rs">RS. PKU Muhammadiyah</text>
-				<text class="alamat"> <ionicons name="md-locate" color="#4E4E4E" /> Alamat lokasinya rumahsakit jalab dan provinsi rumah sakitnya</text>
-			</touchable-opacity>
-			</view>
-	</view>
+		</view>
+	</scroll-view>
 </template>
 
 <script>
@@ -99,16 +126,10 @@
 			status_bar_height() {
 				return  StatusBar.currentHeight || 0 ;
 			},
-		},
-		data() {
-    return {
-      stylesDimen: {
-        scrollMenu: {
-          width: Dimensions.get("window").width,
-        },
+			screen() {
+				return Dimensions.get("window");
 			}
-    };
-  },
+		},
 	}
 </script>
 
@@ -143,30 +164,32 @@
 	.name {
 		font-size: 20;
 		line-height: 22;
-		color: #363636;
 		text-transform: capitalize;
 	}
 	.menu {
-		height: 160;
-		padding-left: 30;
-		margin-bottom: 45;
+		margin-bottom: 30;
+	}
+	.box-wave {
+		position: absolute;
+		height: 100;
+		left: 0;
+		bottom: 0;
+		right: 0;
 	}
 	.s-menu {
-		height: 150;
-		width: 315;
-		background-color: #009C9F;
+		height: 120;
 		border-radius: 10;
 		flex-direction: row;
 		align-items: center;
 		padding: 20;
 		margin-right: 15;
 		justify-content: space-between;
+		position: relative;
+		overflow: hidden;
 	},
 	.s-title {
 		font-size: 18;
-		font-weight: bold;
 		line-height: 28;
-		color: #fff;
 		text-transform: capitalize;
 	},
 	.uppercase {
@@ -177,13 +200,10 @@
 		height: 40;
 		justify-content: center;
 		align-items: center;
-		background-color: #17C6CA;
 		border-radius: 5;
 	},
 	.s-handleTitle {
-		color: #FFF;
 		font-size: 14;
-		font-weight: bold;
 		line-height: 17;
 		text-transform: capitalize;
 	},
@@ -196,7 +216,6 @@
 	},
 	.t-menu {
 		font-size: 18;
-		font-weight: bold;
 		line-height: 22;
 		margin-bottom: 10;
 	},
@@ -228,16 +247,13 @@
 	},
 	.amount {
 		font-size: 28;
-		font-weight: bold;
 		line-height: 34;
-		color: #EF6C00;
 		margin-top: 8;
 		margin-bottom: 10;
 	},
 	.notice {
 		font-size: 11;
 		line-height: 13;
-		color: #979797;
 	},
 	.rujukan {
 		min-height: 160;
@@ -253,8 +269,6 @@
 	.lengkap {
 		font-size: 11;
 		line-height: 13;
-		color: #009C9F;
-		font-weight: normal;
 	},
 	.listRujuk {
 		width: 100%;
@@ -268,15 +282,12 @@
 		elevation: 6;
 	},
 	.rs {
-		font-weight: bold;
 		font-size: 14px;
 		line-height: 17px;
-		color: #363636;
 		margin-bottom: 11;
 	},
 	.alamat {
 		width: 90%;
-		font-weight: normal;
 		font-size: 13px;
 		line-height: 20px;
 	}

@@ -3,25 +3,25 @@
 		<bg-common />
 
 		<view class="card" :style="{height: screen.height - 150}">
-				<image 
-					class="title-img" 
-					resize-mode="contain" 
-					:source="require('../assets/images/img-title.png')" 
-					:style="{height: screen.width - 300}"
-				/>
-				<animated:view class="question-wrapper" :style="{opacity: opc}">
-					<tx fn aj cb>{{ current.question }}</tx>
-				</animated:view>
-				<view class="button-wrapper">
-					<touchable-native-feedback 
-						v-for="(n, i) in 2" 
-						:on-press="() => fadeQuestion(true, (!i ? current.true : current.false))"
-					>
-						<view class="button-view">
-							<tx fn ac cw>{{ !i ? 'YA' : 'TIDAK' }}</tx>
-						</view>
-					</touchable-native-feedback>
-				</view>
+			<image 
+				class="title-img" 
+				resize-mode="contain" 
+				:source="require('../assets/images/img-title.png')" 
+				:style="{height: screen.width - 300}"
+			/>
+			<animated:view class="question-wrapper" :style="{opacity: opc}">
+				<tx fn aj cb>{{ current.question }}</tx>
+			</animated:view>
+			<view class="button-wrapper">
+				<touchable-native-feedback 
+					v-for="(n, i) in 2" 
+					:on-press="() => fadeQuestion(true, (!i ? current.true : current.false))"
+				>
+					<view class="button-view">
+						<tx fn ac cw>{{ !i ? 'YA' : 'TIDAK' }}</tx>
+					</view>
+				</touchable-native-feedback>
+			</view>
 		</view>
 	</view>
 </template>
@@ -30,11 +30,9 @@
 import { Animated, Easing, Dimensions } from 'react-native';
 
 import assessment from '../data/assessment';
-import BgCommon from '../comps/BgCommon';
 
 export default {
 	props: ['navigation'],
-	components: { BgCommon },
 	data: () => ({
 		current: {
 			id: '', question: '', true: '', false: '' 
