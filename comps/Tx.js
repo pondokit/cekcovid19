@@ -39,6 +39,47 @@ export default class Tx extends React.PureComponent {
   /**
    * @return {string}
    *
+   * tc   text-transform : capitalize
+   * tf   text-transform : full-width
+   * tl   text-transform : lowercase
+   * tu   text-transform : uppercase
+   */
+  transform() {
+    const {tc, tf, tl, tu} = this.props;
+
+    if (tc) return 'capitalize'
+    else if (tf) return 'full-width'
+    else if (tl) return 'lowercase'
+    else if (tu) return 'uppercase';
+  }
+
+  /**
+   * @return {number}
+   *
+   * hb   h1: 26,
+   * hs   h2: 20,
+   * hk    h3: 18,
+   * tl   title: 18,
+   * hd   header: 16,
+   * bd   body: 14,
+   * cp   caption: 12
+   */
+  font() {
+    const {hb, hs, hm, hk , tt, hd, bd, cpt} = this.props;
+
+    if (hb) return 26
+    else if (hs) return 20
+    else if (hm) return 23
+    else if (hk) return 18
+    else if (tt) return 18
+    else if (hd) return 16
+    else if (bd) return 14
+    else if (cpt) return 12
+  }
+
+  /**
+   * @return {string}
+   *
    * fn   font: regular
    * fi   font: italic
    * fb   font: bold
@@ -65,7 +106,7 @@ export default class Tx extends React.PureComponent {
     else if (cb) return '#333333'
     else if (cw) return '#FFFFFF'
     else if (cm) return '#888888'
-    else if (cp) return '#07BFC2';
+    else if (cp) return '#17C6CA';
   }
 
   componentDidMount() {
@@ -75,13 +116,15 @@ export default class Tx extends React.PureComponent {
   render() {
     if (this.state.fontsLoaded) {
       return (
-          <Text 
-            style={{ 
-              fontFamily: this.weight(), 
+          <Text
+            style={{
+              fontFamily: this.weight(),
               textAlign: this.align(),
+              textTransform: this.transform(),
               color: this.color(),
+              fontSize: this.font(),
               // lineHeight: 23,
-              ...this.props.style[0] 
+              ...this.props.style[0]
             }}
           >
             {this.props.children}
