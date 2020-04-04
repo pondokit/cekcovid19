@@ -35,11 +35,9 @@
 import { Dimensions } from 'react-native';
 
 import result from '../data/result';
-import BgCommon from '../comps/BgCommon';
 
 export default {
 	props: ['navigation'],
-	components: { BgCommon },
 	data: () => ({
 		res: {
 			id: '', title: '', instruction: '', caption: '', img: '', button: '' 
