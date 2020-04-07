@@ -12,13 +12,15 @@
 
 	import Tx from './comps/Tx';
 	import BgCommon from './comps/BgCommon';
-	
+	import BgPage from './comps/BgPage';
+
 	Vue.prototype.$axios = axios;
 	Vue.prototype.$store = Store;
 	Vue.prototype.$storage = AsyncStorage;
 
 	Vue.component('tx', Tx);
 	Vue.component('bg-common', BgCommon);
+	Vue.component('bg-page', BgPage);
 
 	export default {
 		components: {AppNavigator}
