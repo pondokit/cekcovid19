@@ -10,7 +10,9 @@
 					/>
 					<tx fn al cb class="name">hai, pias!</tx>
 				</view>
-				<ionicons name="ios-timer" class="h-icon" color="#4E4E4E" />
+				<touchable-native-feedback :on-press="() => navigation.navigate('History')">
+					<ionicons name="ios-timer" class="h-icon" color="#4E4E4E" />
+				</touchable-native-feedback>
 			</view>
 			<view class="menu" :style="{width: screen.width}">
 				<ScrollView :horizontal="true" :showsHorizontalScrollIndicator="false">
@@ -27,9 +29,11 @@
 							<tx fb al cw class="s-title">mulai cek mandiri</tx>
 							<tx fb al cw class="s-title uppercase">covid 19</tx>
 						</view>
-						<touchable-opacity class="s-handle" :style="{backgroundColor: '#17C6CA'}">
-							<tx fb ac cw class="s-handleTitle">kenali</tx>
-						</touchable-opacity>
+						<touchable-native-feedback :on-press="() => navigation.navigate('CheckMandiri')">
+							<view class="s-handle" :style="{backgroundColor: '#17C6CA'}">
+								<tx fb ac cw class="s-handleTitle">Mulai</tx>
+							</view>
+						</touchable-native-feedback>
 					</view>
 					<view 
 						class="s-menu" 
@@ -44,9 +48,11 @@
 							<tx fb al cw class="s-title">mulai cek harian</tx>
 							<tx fb al cw class="s-title uppercase">covid 19</tx>
 						</view>
-						<touchable-opacity class="s-handle" :style="{backgroundColor: '#B621EA'}">
-							<tx fb ac cw class="s-handleTitle">kenali</tx>
-						</touchable-opacity>
+						<touchable-native-feedback>
+							<view class="s-handle" :style="{backgroundColor: '#B621EA'}">
+								<tx fb ac cw class="s-handleTitle">kenali</tx>
+							</view>
+						</touchable-native-feedback>
 					</view>
 					<view 
 						class="s-menu" 
@@ -61,9 +67,11 @@
 							<tx fb al cw class="s-title">bersama lawan</tx>
 							<tx fb al cw class="s-title uppercase">covid 19</tx>
 						</view>
-						<touchable-opacity class="s-handle" :style="{backgroundColor: '#003FBA'}">
-							<tx fb ac cw class="s-handleTitle">kenali</tx>
-						</touchable-opacity>
+						<touchable-native-feedback :on-press="() => navigation.navigate('ListTips')">
+							<view class="s-handle" :style="{backgroundColor: '#003FBA'}">
+								<tx fb ac cw class="s-handleTitle">kenali</tx>
+							</view>
+						</touchable-native-feedback>
 					</view>
 				</ScrollView>
 			</view>
@@ -96,18 +104,18 @@
 			<view class="rujukan">
 				<view class="h-rujukan">
 					<tx fb al cb class="t-menu">Daftar RS Rujukan</tx>
-					<touchable-opacity>
+					<touchable-opacity  :on-press="() => navigation.navigate('Hospital')">
 						<tx fn al cp class="lengkap">lihat lengkap</tx>
 					</touchable-opacity>
 				</view>
-				<touchable-opacity class="listRujuk">
-					<tx fb al cb class="rs">RS. PKU Muhammadiyah</tx>
-					<tx fn al cb class="alamat"> <ionicons name="md-locate" color="#4E4E4E" /> Alamat lokasinya rumahsakit jalab dan provinsi rumah sakitnya</tx>
-				</touchable-opacity>
-				<touchable-opacity class="listRujuk">
-					<tx fb al cb class="rs">RS. PKU Muhammadiyah</tx>
-					<tx fn al cb class="alamat"> <ionicons name="md-locate" color="#4E4E4E" /> Alamat lokasinya rumahsakit jalab dan provinsi rumah sakitnya</tx>
-				</touchable-opacity>
+
+				<touchable-native-feedback v-for="n in 3">
+					<view class="listRujuk">
+						<tx fb al cb class="rs">RS. PKU Muhammadiyah</tx>
+						<tx fn al cb class="alamat"> <ionicons name="md-locate" color="#4E4E4E" /> Alamat lokasinya rumahsakit jalab dan provinsi rumah sakitnya</tx>
+					</view>
+				</touchable-native-feedback>
+
 			</view>
 		</view>
 	</scroll-view>
@@ -117,11 +125,11 @@
 	import { Dimensions, StatusBar } from 'react-native';
 	import { Ionicons } from "@expo/vector-icons";
 
-	const screenWidth = Math.round(Dimensions.get('window').width);
 	export default {
+		props: ['navigation'],
 		components: {
-				Ionicons
-			},
+			Ionicons
+		},
 		computed: {
 			status_bar_height() {
 				return  StatusBar.currentHeight || 0 ;

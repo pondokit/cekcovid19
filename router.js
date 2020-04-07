@@ -16,7 +16,7 @@ import ResultMandiri from './screens/ResultMandiri';
 
 const StackNavigator = createStackNavigator(
 	{
-    Splash: Splash,
+    	Splash: Splash,
 		Login: Login,
 		Home: Home,
 		Menu: Menu,

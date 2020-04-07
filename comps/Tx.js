@@ -123,7 +123,6 @@ export default class Tx extends React.PureComponent {
               textTransform: this.transform(),
               color: this.color(),
               fontSize: this.font(),
-              // lineHeight: 23,
               ...this.props.style[0]
             }}
           >
