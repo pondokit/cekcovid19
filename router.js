@@ -28,7 +28,7 @@ const StackNavigator = createStackNavigator(
 		ResultMandiri: ResultMandiri,
 	},
 	{
-		initialRouteName: 'Hospital',
+		initialRouteName: 'Login',
 		headerMode: 'none',
 	}
 );

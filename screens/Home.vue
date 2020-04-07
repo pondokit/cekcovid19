@@ -24,7 +24,7 @@
 							:style="{width: screen.width - 60}"
 						/>
 						<view>
-							<tx fb al cw class="s-title">bersama lawan</tx>
+							<tx fb al cw class="s-title">mulai cek mandiri</tx>
 							<tx fb al cw class="s-title uppercase">covid 19</tx>
 						</view>
 						<touchable-opacity class="s-handle" :style="{backgroundColor: '#17C6CA'}">
@@ -41,7 +41,7 @@
 							:style="{width: screen.width - 60}"
 						/>
 						<view>
-							<tx fb al cw class="s-title">bersama lawan</tx>
+							<tx fb al cw class="s-title">mulai cek harian</tx>
 							<tx fb al cw class="s-title uppercase">covid 19</tx>
 						</view>
 						<touchable-opacity class="s-handle" :style="{backgroundColor: '#B621EA'}">
