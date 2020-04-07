@@ -21,7 +21,7 @@ const StackNavigator = createStackNavigator(
 		ResultMandiri: ResultMandiri,
 	},
 	{
-		initialRouteName: 'Splash',
+		initialRouteName: 'Login',
 		headerMode: 'none',
 	}
 );
