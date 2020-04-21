@@ -1,16 +1,8 @@
 <template>
 	<view class="container" :style="{paddingTop: status_bar_height}">
-		<bg-page />
-
-		<view class="page-header" :style="{width: screen.width}">
-			 <ionicons name="ios-arrow-round-back" class="icon" color="#fff" />
-			 <tx fb cw hs tc> history pengecekan <tx>
-		</view>
-
-		<view class="page-content" :style="{width: screen.width}">
-			<text>bismillah</text>
-
-		</view>
+		<bg-page title="history pengecekan" :navigation="navigation">
+			<text>On Development.</text>
+		</bg-page>
 	</view>
 </template>
 
@@ -19,6 +11,7 @@
 	import { Ionicons } from "@expo/vector-icons";
 
 	export default {
+		props: ['navigation'],
 		components: {
   			Ionicons
   		},

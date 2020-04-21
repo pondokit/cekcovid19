@@ -5,6 +5,7 @@
 		"instruction" : "Jaga Kesehatanmu!",
 		"caption" : "Anda tidak perlu memeriksakan diri ke rumah sakit. Selalu jaga kesehatan Anda.",
 		"button" : "Baca Tips",
+		"to" : "ListTips"
 	},
 	{
 		"id" : "res_green",
@@ -12,6 +13,7 @@
 		"instruction" : "Periksakan Diri Anda!",
 		"caption" : "Periksakan diri ke dokter terdekat dan istirahat yang cukup.",
 		"button" : "Cari Rumah Sakit",
+		"to" : "Hospital"
 	},
 	{
 		"id" : "res_yellow",
@@ -19,6 +21,7 @@
 		"instruction" : "Karantina Di Rumah!",
 		"caption" : "Karantina diri Anda selama 14 hari terhitung setelah kontak / kunjungan.",
 		"button" : "Baca Tips",
+		"to" : "ListTips"
 	},
 	{
 		"id" : "res_red",
@@ -26,5 +29,6 @@
 		"instruction" : "119 EXT 9",
 		"caption" : "Hubungi 119 EXT 9 atau periksakan diri ke rumah sakit rujukan COVID-19 di daerah Anda.",
 		"button" : "Panggil",
+		"to" : "Hospital"
 	},
 ]

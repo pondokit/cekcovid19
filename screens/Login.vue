@@ -39,7 +39,7 @@
 				</view>
 			</view>
 			
-			<touchable-native-feedback>
+			<touchable-native-feedback :on-press="() => navigation.navigate('Home')">
 				<view class="button-view">
 					<tx fn ac cw>Submit</tx>
 				</view>
@@ -52,6 +52,7 @@
 	import { StatusBar, Dimensions } from 'react-native';
 
 	export default {
+		props: ['navigation'],
 		data: () => ({
 			text: ''
 		}),

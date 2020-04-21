@@ -21,7 +21,7 @@
 				</view>
 				<tx fn aj cb>{{ res.caption }}</tx>
 				<view class="button-wrapper">
-					<touchable-native-feedback :on-press="() => processResponse()">
+					<touchable-native-feedback :on-press="() => processResponse(res.to)">
 						<view class="button-view">
 							<tx fn ac cw>{{ res.button }}</tx>
 						</view>
@@ -58,8 +58,8 @@ export default {
 		}
 	},
 	methods: {
-		processResponse() {
-
+		processResponse(to) {
+			this.navigation.navigate(to);
 		},
 		async getResult() {
 			const id = await this.navigation.getParam('id');

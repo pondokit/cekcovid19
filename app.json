@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Blank Template",
+    "name": "cekcovid19",
     "slug": "cekcovid19",
     "privacy": "public",
     "sdkVersion": "36.0.0",
@@ -35,6 +35,10 @@
         "tsx",
         "vue"
       ]
+    },
+    "android": {
+      "package": "com.mahirtechno.cekcovid19",
+      "versionCode": 1
     }
   }
 }
